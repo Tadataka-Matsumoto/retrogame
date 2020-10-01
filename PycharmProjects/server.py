@@ -1,4 +1,5 @@
 from flask import Flask, make_response, jsonify, request, render_template
+import os
 
 # dbとのコネクション
 import psycopg2
@@ -55,16 +56,17 @@ app = Flask(__name__)#何している? expressと同じだろうな。。。
 def hello_world():
     return "hello world!"
 
-@app.route("/scores/<point>", methods=["GET", "POST"])
-def get_scores(point):
-    print(point)
+@app.route("/scores", methods=["GET", "POST"])
+def get_scores():
+    print("きたぞ！！！！！")
     if request.method == "POST":
         print(request.method)
         # ps_cursor.execute("INSERT INTO invader VALUES ${point}")
         return res
     elif request.method == "GET":  
         print(request.method)
-        return point
+        print(invader_records)
+        return invader_records
         # return res
         # return render_template()
 
@@ -92,6 +94,9 @@ def delete_collection(collection):
 
 if __name__ == "__main__":
 
+#    port = int(os.getenv("PORT", 8000))
+#    app.run(host="0.0.0.0", port=port) 
+    # 127.0.0.1:5000☜がdefaultみたい
     # webサーバー立ち上げ
     app.run()
 
