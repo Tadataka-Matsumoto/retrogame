@@ -23,7 +23,7 @@ const InvaderGamelList = () => {
 
 
 　  //とにかくゲットする
-    useEffect(() => {
+    // useEffect(() => {
         const getScores = async()=> {
             try {
                 const response = await fetch("http://localhost:5000/scores");
@@ -36,7 +36,9 @@ const InvaderGamelList = () => {
         }
 
         getScores();
-    },[])
+
+        
+    // },[])
 
 
     return (

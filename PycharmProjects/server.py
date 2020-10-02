@@ -1,6 +1,10 @@
 from flask import Flask, make_response, jsonify, request, render_template
 import os
 
+
+# from main2.py import gameStart
+from main2 import gameStart 
+
 # dbとのコネクション
 import psycopg2
 from psycopg2 import pool
@@ -15,6 +19,7 @@ try:
 
     # Use getconn() to Get Connection from connection pool
     ps_connection  = postgreSQL_pool.getconn()
+
 
     if(ps_connection):
         print("successfully recived connection from connection pool ")
@@ -49,6 +54,7 @@ except (Exception, psycopg2.DatabaseError) as error :
 #flaskがexpressと同じような役割を果たしてサーバーを立ち上げる
 app = Flask(__name__)#何している? expressと同じだろうな。。。
 
+gameStart()
 
 # http://127.0.0.1:5000をルートとして、("")の中でアクセスポイント指定＝＞なんで5000？？？
 # @app.route("hoge")などで指定すると、http://127.0.0.1:5000/hogeでの動作を記述できる。
@@ -63,10 +69,12 @@ def get_scores():
         print(request.method)
         # ps_cursor.execute("INSERT INTO invader VALUES ${point}")
         return res
-    elif request.method == "GET":  
+    elif request.method == "GET":
+        gameStart()
+          
         print(request.method)
         print(invader_records)
-        return invader_records
+        # return invader_records
         # return res
         # return render_template()
 
