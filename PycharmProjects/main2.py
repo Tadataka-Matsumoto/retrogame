@@ -1,9 +1,9 @@
 def gameStart():
 
-
     import math
     import random
     import pygame
+    import os
 
     # Initialize the pygame
     pygame.init()
@@ -12,15 +12,15 @@ def gameStart():
     screen = pygame.display.set_mode((800, 600))
 
     # Background
-    background = pygame.image.load("background.jpg")
+    background = pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\background.jpg")
 
     # Caption and Icon
     pygame.display.set_caption("Space Invaders")
-    icon = pygame.image.load("ufo.png")
+    icon = pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\ufo.png")
     pygame.display.set_icon(icon)
 
     # player
-    playerImg = pygame.image.load("player.png")
+    playerImg = pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\player.png")
     playerX = 370
     playerY = 480
     playerX_change = 0
@@ -34,7 +34,7 @@ def gameStart():
     num_of_enemies = 300
 
     for i in range(num_of_enemies):
-        enemyImg.append(pygame.image.load("enemy.png"))
+        enemyImg.append(pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\enemy.png"))
         enemyX.append(random.randint(0, 735))
         enemyY.append(random.randint(50, 150))
         enemyX_change.append(4)
@@ -42,7 +42,7 @@ def gameStart():
 
     # Ready - you can't see the bullet on the screen
     # Fire - the bullet is currently moving
-    bulletImg = pygame.image.load("bullet.png")
+    bulletImg = pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\bullet.png")
     bulletX = 0
     bulletY = 480
     bulletX_change = 0
@@ -60,7 +60,8 @@ def gameStart():
     over_font = pygame.font.Font('freesansbold.ttf', 64)
 
     def show_score(x, y):
-        score = font.render("Score : " + str(score_value), True, (255, 255, 255))
+        score = font.render("Score : " + str(score_value),
+                            True, (255, 255, 255))
         screen.blit(score, (x, y))
 
     def game_over_text():
@@ -79,7 +80,7 @@ def gameStart():
         screen.blit(bulletImg, (x + 16, y + 10))
 
     def isCollision(enemyX, enemyY, bulletX, bulletY):
-        distance = math.sqrt((math.pow(enemyX - bulletX, 2)) + (math.pow(enemyY - bulletY, 2)))
+        distance = math.sqrt((math.pow(enemyX - bulletX, 2))+(math.pow(enemyY - bulletY, 2)))
         if distance < 27:
             return True
         else:
@@ -169,4 +170,4 @@ def gameStart():
 
         pygame.display.update()
 
-    return score_value
+    # return score_value

@@ -1,9 +1,9 @@
 from flask import Flask, make_response, jsonify, request, render_template
 import os
 
-
 # from main2.py import gameStart
-from main2 import gameStart 
+from main import gameStart 
+
 
 # dbとのコネクション
 import psycopg2
@@ -54,7 +54,6 @@ except (Exception, psycopg2.DatabaseError) as error :
 #flaskがexpressと同じような役割を果たしてサーバーを立ち上げる
 app = Flask(__name__)#何している? expressと同じだろうな。。。
 
-gameStart()
 
 # http://127.0.0.1:5000をルートとして、("")の中でアクセスポイント指定＝＞なんで5000？？？
 # @app.route("hoge")などで指定すると、http://127.0.0.1:5000/hogeでの動作を記述できる。
@@ -71,10 +70,10 @@ def get_scores():
         return res
     elif request.method == "GET":
         gameStart()
-          
+         
         print(request.method)
         print(invader_records)
-        # return invader_records
+        return invader_records
         # return res
         # return render_template()
 
