@@ -21,6 +21,7 @@ try:
     ps_connection  = postgreSQL_pool.getconn()
 
 
+
     if(ps_connection):
         print("successfully recived connection from connection pool ")
         ps_cursor = ps_connection.cursor() # SQL実行のためカーソルを作成
