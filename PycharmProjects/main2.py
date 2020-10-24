@@ -31,7 +31,7 @@ def gameStart():
     enemyY = []
     enemyX_change = []
     enemyY_change = []
-    num_of_enemies = 300
+    num_of_enemies = 30
 
     for i in range(num_of_enemies):
         enemyImg.append(pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\enemy.png"))

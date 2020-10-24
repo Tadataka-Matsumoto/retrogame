@@ -2,7 +2,7 @@ from flask import Flask, make_response, jsonify, request, render_template
 import os
 
 # from main2.py import gameStart
-from main import gameStart 
+from main2 import gameStart 
 
 
 # dbとのコネクション

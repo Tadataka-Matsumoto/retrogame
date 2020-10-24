@@ -2,7 +2,7 @@ def gameStart():
 
     import math
     import random
-
+    import os
     import pygame
 
 
@@ -11,8 +11,6 @@ def gameStart():
 
 # create the screen
     screen = pygame.display.set_mode((800, 600))
-
-
 
 # Background
     background = pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\background.jpg")

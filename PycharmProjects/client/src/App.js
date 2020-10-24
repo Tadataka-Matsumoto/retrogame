@@ -40,9 +40,9 @@ function App() {
   return (
     <Fragment>
       <div className="container">
-        <h1>Invader game</h1>
-        <button onClick={clickUsual}>gameusual</button>
-        <button onClick={clickNiece}>gameNiece</button>
+        <h1>Space Invader</h1>
+        <button onClick={clickUsual}>game</button>
+        <button onClick={clickNiece}>game for Niece</button>
         {/* <a href="https://www.yahoo.co.jp/" >yahoo</a> */}
         <invaderGameList />
       </div>
