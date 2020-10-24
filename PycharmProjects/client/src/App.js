@@ -14,7 +14,8 @@ import invaderGameList from "./components/invaderGameList"
 const clickUsual = async()=> {
   try {
     console.log("ttttttt");
-      const response = await fetch("http://localhost:5000/scores");
+      // const response = await fetch("http://localhost:5000/scores");
+      const response = await fetch("/scores");
 　　　　　　 const jsonData = await response.json();　
       console.log(jsonData);
       // setScores(jsonData);
@@ -26,7 +27,8 @@ const clickUsual = async()=> {
 const clickNiece = async()=> {
   try {
     console.log("sssssss");
-      const response = await fetch("http://localhost:5000/scores");
+      // const response = await fetch("http://localhost:5000/scores");
+      const response = await fetch("/scores");
 　　　　　　 const jsonData = await response.json();　
       console.log(jsonData);
       // setScores(jsonData);
