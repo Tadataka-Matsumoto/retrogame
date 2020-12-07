@@ -32,7 +32,7 @@ enemyX = []
 enemyY = []
 enemyX_change = []
 enemyY_change = []
-num_of_enemies = 300
+num_of_enemies = 150
 
 for i in range(num_of_enemies):
     enemyImg.append(pygame.image.load("enemy.png"))
@@ -47,7 +47,7 @@ bulletImg = pygame.image.load("bullet.png")
 bulletX = 0
 bulletY = 480
 bulletX_change = 0
-bulletY_change = 100
+bulletY_change = 5.5
 bullet_state = "ready"
 
 
@@ -85,7 +85,7 @@ def fire_bullet(x, y):
 
 def isCollision1(enemyX, enemyY, bulletX, bulletY):
     distance = math.sqrt((math.pow(enemyX-bulletX, 2))+(math.pow(enemyY-bulletY, 2)))
-    if distance < 27:
+    if distance < 100:
         return True
     else:
         return False
@@ -165,8 +165,8 @@ while running:
         # Collision1
         collision1 = isCollision1(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision1:
-            bulletY = 480
-            bullet_state = "ready"
+            # bulletY = 480
+            # bullet_state = "ready"
             score_value += 1
             enemyX[i] = random.randint(0, 735)
             enemyY[i] = random.randint(50, 150)

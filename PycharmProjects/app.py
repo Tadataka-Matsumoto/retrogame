@@ -2,7 +2,7 @@ from flask import Flask, make_response, jsonify, request, render_template
 import os
 
 # from main2.py import gameStart
-from main2 import gameStart 
+from main2 import gameStart2
 
 
 # dbとのコネクション
@@ -70,7 +70,7 @@ def get_scores():
         # ps_cursor.execute("INSERT INTO invader VALUES ${point}")
         return res
     elif request.method == "GET":
-        gameStart()
+        gameStart2()
          
         print(request.method)
         print(invader_records)

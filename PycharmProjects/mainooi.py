@@ -47,7 +47,7 @@ bulletImg = pygame.image.load("bullet.png")
 bulletX = 0
 bulletY = 480
 bulletX_change = 0
-bulletY_change = 100
+bulletY_change = 20
 bullet_state = "ready"
 
 

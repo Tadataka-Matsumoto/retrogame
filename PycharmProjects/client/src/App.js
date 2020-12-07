@@ -1,5 +1,6 @@
 import React, { Fragment, useState} from 'react';
 import './App.css';
+import axios from "axios"
 
 //import component
 import invaderGameList from "./components/invaderGameList"
@@ -14,8 +15,8 @@ import invaderGameList from "./components/invaderGameList"
 const clickUsual = async()=> {
   try {
     console.log("ttttttt");
-      // const response = await fetch("http://localhost:5000/scores");
-      const response = await fetch("/scores");
+      const response = await fetch("http://localhost:5000/scores");
+      // const response = axios.get("/scores");
 　　　　　　 const jsonData = await response.json();　
       console.log(jsonData);
       // setScores(jsonData);

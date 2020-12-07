@@ -1,4 +1,4 @@
-def gameStart():
+def gameStart2():
 
     import math
     import random
@@ -13,14 +13,16 @@ def gameStart():
 
     # Background
     background = pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\background.jpg")
-
+    # background = pygame.image.load("background.jpg")
     # Caption and Icon
     pygame.display.set_caption("Space Invaders")
     icon = pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\ufo.png")
+    # icon = pygame.image.load("ufo.png")
     pygame.display.set_icon(icon)
 
     # player
     playerImg = pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\player.png")
+    # playerImg = pygame.image.load("player.png")
     playerX = 370
     playerY = 480
     playerX_change = 0
@@ -35,6 +37,7 @@ def gameStart():
 
     for i in range(num_of_enemies):
         enemyImg.append(pygame.image.load(R"C:\Users\tdtk1\JIMM2_FOLDER\retrogame\PycharmProjects\enemy.png"))
+        # enemyImg.append(pygame.image.load("enemy.png"))
         enemyX.append(random.randint(0, 735))
         enemyY.append(random.randint(50, 150))
         enemyX_change.append(4)
@@ -170,4 +173,5 @@ def gameStart():
 
         pygame.display.update()
 
-    # return score_value
+    # score_valueを返す
+    return score_value
